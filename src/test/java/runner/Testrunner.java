@@ -14,7 +14,8 @@ import static cucumber.api.SnippetType.CAMELCASE;
         //where read test cases
         glue = ("Tests"),
         // export cucumber report
-        plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/reportCasino.html"},
+        plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html"},
+        monochrome = true,
         snippets = CAMELCASE
 )
 public class Testrunner {

@@ -1,18 +1,11 @@
 package Tests;
 
-import Pages.CasinoHomePage;
 import Steps.CasinoHomeSteps;
 import Steps.RegistrationSteps;
+import com.vimalselvam.cucumber.listener.Reporter;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.List;
 
 
 public class RegisterTest {
@@ -37,7 +30,9 @@ public class RegisterTest {
 
     @When("^the user enters their email \"([^\"]*)\"$")
     public void theUserEntersTheirEmail(String email) throws Throwable {
-        registrationSteps.emailInput(email);
+        String sEmail = email+registrationSteps.randomNumber()+"@gmail.com";
+        registrationSteps.emailInput(sEmail);
+        Reporter.addStepLog("Email used: "+sEmail);
     }
 
     @When("^enters their main coin \"([^\"]*)\"$")
@@ -46,88 +41,105 @@ public class RegisterTest {
     }
 
     @When("^enters their password \"([^\"]*)\"$")
-    public void entersTheirPassword(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirPassword(String password) throws Throwable {
+        registrationSteps.passwordInput(password);
     }
 
     @When("^re-enters their password \"([^\"]*)\"$")
-    public void reEntersTheirPassword(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void reEntersTheirPassword(String password) throws Throwable {
+        registrationSteps.reEnterPasswordInput(password);
     }
 
     @When("^enters their name \"([^\"]*)\"$")
-    public void entersTheirName(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirName(String name) throws Throwable {
+        registrationSteps.nameInput(name);
     }
 
     @When("^enters their lastName \"([^\"]*)\"$")
-    public void entersTheirLastName(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirLastName(String lastName) throws Throwable {
+        registrationSteps.lastNameInput(lastName);
     }
 
     @When("^enters their middleName \"([^\"]*)\"$")
-    public void entersTheirMiddleName(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirMiddleName(String middleName) throws Throwable {
+        registrationSteps.middleNameInput(middleName);
     }
 
     @When("^check the therms and conditions$")
     public void checkTheThermsAndConditions() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+        registrationSteps.termsAndConditionsCheckBox();
+    }
+
+    @When("^enters the catpcha code$")
+    public void entersTheCatpchaCode() throws Throwable {
+        registrationSteps.captchaInput();
     }
 
     @When("^enters their birthay \"([^\"]*)\"$")
-    public void entersTheirBirthay(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirBirthay(String birthday) throws Throwable {
+        registrationSteps.birthdayDateInput(birthday);
     }
 
     @When("^enters their nickName \"([^\"]*)\"$")
-    public void entersTheirNickName(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirNickName(String nickName) throws Throwable {
+        String nick = nickName+ "_" +registrationSteps.randomNumber();
+        registrationSteps.nicknameInput(nick);
+        Reporter.addStepLog("NickName used: "+nick);
     }
 
     @When("^enters their address \"([^\"]*)\"$")
-    public void entersTheirAddress(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirAdress(String adress) throws Throwable {
+        registrationSteps.addressInput(adress);
     }
 
     @When("^enters their country \"([^\"]*)\"$")
-    public void entersTheirCountry(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirCountry(String country) throws Throwable {
+        registrationSteps.clickCountry();
+        registrationSteps.selectCountry(country);
     }
 
     @When("^enters their city \"([^\"]*)\"$")
-    public void entersTheirCity(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirCity(String city) throws Throwable {
+        registrationSteps.cityInput(city);
     }
 
     @When("^enters their postalCode \"([^\"]*)\"$")
-    public void entersTheirPostalCode(int arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirPostalCode(String postalCode) throws Throwable {
+        registrationSteps.postalCodeInput(postalCode);
     }
 
     @When("^enters their gender \"([^\"]*)\"$")
-    public void entersTheirGender(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirGender(String gender) throws Throwable {
+        registrationSteps.clickGender();
+        registrationSteps.selectGender(gender);
     }
 
     @When("^enters their question \"([^\"]*)\"$")
-    public void entersTheirQuestion(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirQuestion(String question) throws Throwable {
+        registrationSteps.clickSecretQuestion();
+        registrationSteps.selectSecretQuestion(question);
+    }
+
+    @When("^enters the answer \"([^\"]*)\"$")
+    public void entersTheAnswer(String answer) throws Throwable {
+        registrationSteps.answerInput(answer);
     }
 
     @When("^enters their login \"([^\"]*)\"$")
-    public void entersTheirLogin(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void entersTheirLogin(String login) throws Throwable {
+        String log = login + RegistrationSteps.randomNumber();
+        registrationSteps.loginInput(log);
+        Reporter.addStepLog("Login used: "+log);
     }
 
     @When("^click on Register button$")
     public void clickOnRegisterButton() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+        registrationSteps.clickRegisterButton();
     }
 
     @Then("^a congratulations sign up message should be displayed$")
     public void aCongratulationsSignUpMessageShouldBeDisplayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+        registrationSteps.checkRegisterMessage();
     }
 
 

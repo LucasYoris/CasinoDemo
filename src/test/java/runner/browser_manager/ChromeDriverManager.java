@@ -6,15 +6,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class ChromeDriverManager extends DriverManager {
 
     @Override
-    protected void createDriver(boolean headless) {
+    protected void createDriver(boolean headless,boolean incognito) {
         ChromeOptions options;
         //headless option
+        options = new ChromeOptions();
         if(headless){
-            options = new ChromeOptions();
             options.addArguments("headless");
-        }else{
-            options = new ChromeOptions();
         }
+        if(incognito){
+            options.addArguments("--incognito");
+        }
+
 
         System.setProperty("webdriver.chrome.driver","./src/test/resources/chromedriver/chromedriver.exe");
         driver = new ChromeDriver(options);
