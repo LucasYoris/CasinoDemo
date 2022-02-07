@@ -7,6 +7,7 @@ import com.vimalselvam.cucumber.listener.Reporter;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.junit.AfterClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -36,7 +37,6 @@ public class Config {
 
     @Before
     public void setUp(){
-        Reporter.assignAuthor("Lucas Yoris");
         //select browser
         driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         //select headless true or false
@@ -59,18 +59,29 @@ public class Config {
             FileHandler.copy(src,new File(errorImg));
             Thread.sleep(1000);
             Reporter.addScreenCaptureFromPath("errorsScreenshots\\"+screenshotName+".png");
-            if(driver.findElement(By.xpath("//div[text()='Invalid verification code']")).isDisplayed()){
-                //Image Tyzer API
-                ImageTyperzAPI i = new ImageTyperzAPI("ED4592D467604D7C9B2891DEA6431902");
-                //Takes static captcha_id from RegistrationSteps
-                i.set_captcha_bad(RegistrationSteps.captcha_id);
+            try{
+                //report captcha_id if the API couldn decrypt the image
+                if(driver.findElement(By.xpath("//div[text()='Invalid verification code']")).isDisplayed()){
+                    //Image Tyzer API
+                    ImageTyperzAPI i = new ImageTyperzAPI("ED4592D467604D7C9B2891DEA6431902");
+                    //Takes static captcha_id from RegistrationSteps
+                    i.set_captcha_bad(RegistrationSteps.captcha_id);
+                    Reporter.addStepLog("The captcha could not be resolved by the API, please run the test again");
+                }
+            }catch(Exception e){
+                //close driver
+                driverManager.quitDriver();
+                //kill chromedriver process that could be running
+                Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
             }
+
         }
         //close driver
         driverManager.quitDriver();
         //kill chromedriver process that could be running
         Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
     }
+
     public static WebDriver getDriver(){
         return driver;
     }

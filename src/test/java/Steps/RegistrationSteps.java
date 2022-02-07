@@ -113,9 +113,6 @@ public class RegistrationSteps extends RegistrationPage {
         }
     }
 
-
-
-
     public void birthdayDateInput(String date){
         Assert.assertTrue(getBirthdayDateLocator().isDisplayed());
         ((JavascriptExecutor)driver).executeScript ("document.getElementById('core__protected_modules_user_yiiForm_RegistrationForm_birthday').removeAttribute('readonly',0);");
