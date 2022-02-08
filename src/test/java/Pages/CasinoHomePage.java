@@ -8,7 +8,7 @@ public class CasinoHomePage extends TestBase {
 
     private String titleHomePage = "Demo casino";
     private By registrationButtonLocator = By.xpath("//div[@class='header__bottom']//a[@href='/user/registration']");
-    private By moreButtonLocator = By.xpath("//span[text()='More']");
+    private By moreButtonLocator = By.xpath("//li[@class='header-menu-main__item menu-dd__item menu-dd__item--active']");
     private By contactsButtonLocator = By.xpath("//ul[@class='menu-dd__dropdown']/li/a[text()='Contacts']");
 
     public String getTitleHomePage() {

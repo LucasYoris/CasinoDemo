@@ -5,6 +5,9 @@
 
     - Exploradores soportados ---> Google chrome(Versión 98.0.4758.81), firefox
 
+    -Ejecuta en modo headless sin problemas. Cuando llega a la parte de ingresar captcha puede tardar
+     entre 6 y 8 segundos en docdigicar
+
     -Se automatizaron 2 features
         Registration ---> registro de usuario ok
         Contacts ---> envio de mensaje de consulta ok
