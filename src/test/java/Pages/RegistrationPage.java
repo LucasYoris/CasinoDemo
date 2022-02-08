@@ -14,7 +14,7 @@ public class RegistrationPage extends TestBase {
     private final By nameInputLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_name");
     private final By lastNameInputLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_surname");
     private final By middleNameInputLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_middle_name");
-    private final By termsAndConditionsCheckBoxLocator = By.xpath("//label[@for='core__protected_modules_user_yiiForm_RegistrationForm_terms_and_condition']");
+    private final By termsAndConditionsCheckBoxLocator = By.xpath("//label[@for='core__protected_modules_user_yiiForm_RegistrationForm_terms_and_conditions']");
     private final By enterCodeInputLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_captcha");
     private final By captchaImgLocator = By.id("yw1");
     private final By birthdayDateLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_birthday");
@@ -37,137 +37,110 @@ public class RegistrationPage extends TestBase {
 
 
     protected WebElement getTitleRegistrationPage() {
-        WebElement titleRegistration = driver.findElement(titleRegistrationPage);
-        return titleRegistration;
+        return driver.findElement(titleRegistrationPage);
     }
 
     protected WebElement getEmailInputLocator() {
-        WebElement emailInput = driver.findElement(emailInputLocator);
-        return emailInput;
+        return driver.findElement(emailInputLocator);
     }
 
     protected WebElement getcoinRBLocator() {
-        WebElement coinRB = driver.findElement(coinRBLocator);
-        return coinRB;
+        return driver.findElement(coinRBLocator);
     }
 
     protected WebElement getPasswordInputLocator() {
-        WebElement passwordInput = driver.findElement(passwordInputLocator);
-        return passwordInput;
+        return driver.findElement(passwordInputLocator);
     }
 
     protected WebElement getReEnterPasswordInputLocator() {
-        WebElement reEnterPasswordInput = driver.findElement(reEnterPasswordInputLocator);
-        return reEnterPasswordInput;
+        return driver.findElement(reEnterPasswordInputLocator);
     }
 
     protected WebElement getNameInputLocator() {
-        WebElement nameInput = driver.findElement(nameInputLocator);
-        return nameInput;
+        return driver.findElement(nameInputLocator);
     }
 
     protected WebElement getLastNameInputLocator() {
-        WebElement lastNameInput = driver.findElement(lastNameInputLocator);
-        return lastNameInput;
+        return driver.findElement(lastNameInputLocator);
     }
 
     protected WebElement getMiddleNameInputLocator() {
-        WebElement middleNameInput = driver.findElement(middleNameInputLocator);
-        return middleNameInput;
+        return driver.findElement(middleNameInputLocator);
     }
 
     protected WebElement getTermsAndConditionsCheckBoxLocator() {
-        WebElement termsAndConditionsCheckBox = driver.findElement(termsAndConditionsCheckBoxLocator);
-        return termsAndConditionsCheckBox;
+        return driver.findElement(termsAndConditionsCheckBoxLocator);
     }
 
     protected WebElement getEnterCodeInputLocator() {
-        WebElement enterCodeInput = driver.findElement(enterCodeInputLocator);
-        return enterCodeInput;
+        return driver.findElement(enterCodeInputLocator);
     }
 
     protected WebElement getCaptchaImgLocator() {
-        WebElement captchaImg = driver.findElement(captchaImgLocator);
-        return captchaImg;
+        return driver.findElement(captchaImgLocator);
     }
 
     protected WebElement getBirthdayDateLocator() {
-        WebElement birthdayDate = driver.findElement(birthdayDateLocator);
-        return birthdayDate;
+        return driver.findElement(birthdayDateLocator);
     }
 
     protected WebElement getNicknameInputLocator() {
-        WebElement nicknameInput = driver.findElement(nicknameInputLocator);
-        return nicknameInput;
+        return driver.findElement(nicknameInputLocator);
     }
 
     protected WebElement getAddressInputLocator() {
-        WebElement addressInput = driver.findElement(addressInputLocator);
-        return addressInput;
+        return driver.findElement(addressInputLocator);
     }
 
     protected WebElement getSelectCountryLocator() {
-        WebElement addressInput = driver.findElement(selectCountryLocator);
-        return addressInput;
+        return driver.findElement(selectCountryLocator);
     }
 
     protected WebElement getSelectCountryListLocator(String country) {
-        WebElement selectCountryList = driver.findElement(By.xpath(String.format(selectCountryListLocator,country)));
-        return selectCountryList;
+        return driver.findElement(By.xpath(String.format(selectCountryListLocator,country)));
     }
 
     protected WebElement getCityInputLocator() {
-        WebElement cityInput = driver.findElement(cityInputLocator);
-        return cityInput;
+        return driver.findElement(cityInputLocator);
     }
 
     protected WebElement getPostalCodeInputLocator() {
-        WebElement postalCodeInput = driver.findElement(postalCodeInputLocator);
-        return postalCodeInput;
+        return driver.findElement(postalCodeInputLocator);
     }
 
     protected WebElement getSelectGenderLocator() {
-        WebElement selectGender = driver.findElement(selectGenderLocator);
-        return selectGender;
+        return driver.findElement(selectGenderLocator);
     }
 
     protected WebElement getSelectGenderListLocator(String gender) {
-        WebElement selectGenderList = driver.findElement(By.xpath(String.format(selectGenderListLocator,gender)));
-        return selectGenderList;
+        return driver.findElement(By.xpath(String.format(selectGenderListLocator,gender)));
     }
 
     protected WebElement getSelectSecretQuestionLocator() {
-        WebElement selectSecretQuestion = driver.findElement(selectSecretQuestionLocator);
-        return selectSecretQuestion;
+        return driver.findElement(selectSecretQuestionLocator);
     }
 
     protected WebElement getSelectSecretQuestionListLocator(String question) {
-        WebElement selectSecretQuestionList = driver.findElement(By.xpath(String.format(selectSecretQuestionListLocator,question)));
-        return selectSecretQuestionList;
+        return driver.findElement(By.xpath(String.format(selectSecretQuestionListLocator,question)));
     }
 
     protected WebElement getAnswerInputLocator() {
-        WebElement answerInput = driver.findElement(answerInputLocator);
-        return answerInput;
+        return driver.findElement(answerInputLocator);
     }
 
     protected WebElement getLoginInputLocator() {
-        WebElement loginInput = driver.findElement(loginInputLocator);
-        return loginInput;
+        return driver.findElement(loginInputLocator);
     }
 
     protected WebElement getRegisterButtonLocator() {
-        WebElement registerButton = driver.findElement(registerButtonLocator);
-        return registerButton;
+        return driver.findElement(registerButtonLocator);
     }
 
     protected WebElement getRegisterMesssage1Locator() {
-        WebElement congratulationMessage1 = driver.findElement(congratulationMessage1Locator);
-        return congratulationMessage1;
+        return driver.findElement(congratulationMessage1Locator);
     }
 
     protected WebElement getRegisterMesssage2Locator() {
-        WebElement congratulationMessage2 = driver.findElement(congratulationMessage2Locator);
-        return congratulationMessage2;
+        return driver.findElement(congratulationMessage2Locator);
     }
 }

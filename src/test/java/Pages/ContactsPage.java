@@ -12,7 +12,7 @@ public class ContactsPage extends TestBase {
     private final By topycInputLocator = By.id("HelpForm_topic");
     private final By categoryLocator = By.xpath("//span[text()='Select category']");
     private final String categoryListLocator = "//li[text()='%s']";
-    private final By messaggeInputLocator = By.id("HelpForm_tex");
+    private final By messaggeInputLocator = By.id("HelpForm_text");
     private final By enterCodeInputLocator = By.id("HelpForm_verifyCode");
     private final By captchaImgLocator = By.id("yw1");
     private By sendButtonLocator = By.xpath("//button[@class='button button--s1 button--t1 ']");
@@ -20,63 +20,51 @@ public class ContactsPage extends TestBase {
     private final By congratulationMessage2Locator = By.xpath("//p[@class='notification__description' and text()=' Message has been sent, our manager will contact you shortly. ']");
 
     public WebElement getContactsTitlePage() {
-        WebElement titleContacts = driver.findElement(titleContactsPage);
-        return titleContacts;
+        return driver.findElement(titleContactsPage);
     }
 
     protected WebElement getNameInputLocator() {
-        WebElement nameInput = driver.findElement(nameInputLocator);
-        return nameInput;
+        return driver.findElement(nameInputLocator);
     }
 
     protected WebElement getEmailInputLocator() {
-        WebElement emailInput = driver.findElement(emailInputLocator);
-        return emailInput;
+        return driver.findElement(emailInputLocator);
     }
 
     protected WebElement getTopycInputLocator() {
-        WebElement topycInput = driver.findElement(topycInputLocator);
-        return topycInput;
+        return driver.findElement(topycInputLocator);
     }
 
     protected WebElement getCategoryLocator() {
-        WebElement category = driver.findElement(categoryLocator);
-        return category;
+        return driver.findElement(categoryLocator);
     }
 
     protected WebElement getSelectCategoryListLocator(String category) {
-        WebElement categoryList = driver.findElement(By.xpath(String.format(categoryListLocator,category)));
-        return categoryList;
+        return driver.findElement(By.xpath(String.format(categoryListLocator,category)));
     }
 
     protected WebElement getMessageInputLocator() {
-        WebElement messaggeInput = driver.findElement(messaggeInputLocator);
-        return messaggeInput;
+        return driver.findElement(messaggeInputLocator);
     }
 
     protected WebElement getEnterCodeInputLocator() {
-        WebElement enterCodeInput = driver.findElement(enterCodeInputLocator);
-        return enterCodeInput;
+        return driver.findElement(enterCodeInputLocator);
     }
 
     protected WebElement getCaptchaImgLocator() {
-        WebElement captchaImg = driver.findElement(captchaImgLocator);
-        return captchaImg;
+        return driver.findElement(captchaImgLocator);
     }
 
     public WebElement getSendButton() {
-        WebElement sendButton = driver.findElement(sendButtonLocator);
-        return sendButton;
+        return driver.findElement(sendButtonLocator);
     }
 
     protected WebElement getRegisterMesssage1Locator() {
-        WebElement congratulationMessage1 = driver.findElement(congratulationMessage1Locator);
-        return congratulationMessage1;
+        return driver.findElement(congratulationMessage1Locator);
     }
 
     protected WebElement getRegisterMesssage2Locator() {
-        WebElement congratulationMessage2 = driver.findElement(congratulationMessage2Locator);
-        return congratulationMessage2;
+        return driver.findElement(congratulationMessage2Locator);
     }
 
 
