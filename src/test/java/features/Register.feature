@@ -13,7 +13,7 @@ Feature: User sign up
     And enters their lastName <lastName>
     And enters their middleName <middleName>
     And check the therms and conditions
-    And enters the catpcha code
+    And enters the registration catpcha code
     And enters their birthay <birthay>
     And enters their nickName <nickName>
     And enters their address <address>

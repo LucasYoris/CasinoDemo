@@ -15,7 +15,6 @@ import static cucumber.api.SnippetType.CAMELCASE;
         glue = ("Tests"),
         // export cucumber report
         plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:cucumber-reports/report.html"},
-        monochrome = true,
         snippets = CAMELCASE
 )
 public class Testrunner {

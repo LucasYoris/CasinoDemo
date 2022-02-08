@@ -14,7 +14,7 @@ public class RegistrationPage extends TestBase {
     private final By nameInputLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_name");
     private final By lastNameInputLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_surname");
     private final By middleNameInputLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_middle_name");
-    private final By termsAndConditionsCheckBoxLocator = By.xpath("//label[@for='core__protected_modules_user_yiiForm_RegistrationForm_terms_and_conditions']");
+    private final By termsAndConditionsCheckBoxLocator = By.xpath("//label[@for='core__protected_modules_user_yiiForm_RegistrationForm_terms_and_condition']");
     private final By enterCodeInputLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_captcha");
     private final By captchaImgLocator = By.id("yw1");
     private final By birthdayDateLocator = By.id("core__protected_modules_user_yiiForm_RegistrationForm_birthday");

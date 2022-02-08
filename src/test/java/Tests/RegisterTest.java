@@ -71,8 +71,8 @@ public class RegisterTest {
         registrationSteps.termsAndConditionsCheckBox();
     }
 
-    @When("^enters the catpcha code$")
-    public void entersTheCatpchaCode() throws Throwable {
+    @When("^enters the registration catpcha code$")
+    public void entersTheRegistrationCatpchaCode() throws Throwable {
         registrationSteps.captchaInput();
     }
 

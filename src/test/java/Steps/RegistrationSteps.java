@@ -76,14 +76,15 @@ public class RegistrationSteps extends RegistrationPage {
     }
 
     public void captchaInput() throws Exception {
+        //to focus captcha img
         getEnterCodeInputLocator().sendKeys("Enter code");
         getEnterCodeInputLocator().clear();
-        String cookies = driver.manage().getCookies().toString();
+        //take screenshot and copy to captchaScreenshots
         String captchaPath = System.getProperty("user.dir")+"\\captchaScreenshots\\captcha.png";
         File src = getCaptchaImgLocator().getScreenshotAs(OutputType.FILE);
         FileHandler.copy(src,new File(captchaPath));
 
-        //tesseract OCR
+        //trying with tesseract OCR
         /*ITesseract image = new Tesseract();
         image.setDatapath(System.getProperty("user.dir")+"\\src\\tessdata");
         image.setLanguage("Latin");
@@ -109,7 +110,6 @@ public class RegistrationSteps extends RegistrationPage {
             getEnterCodeInputLocator().sendKeys(captcha.get("Response"));
             Reporter.addStepLog("Captcha used: "+captcha.get("Response")+"\n"+"Captcha ID: "+captcha_id);
             Thread.sleep(1000);
-
         }
     }
 
@@ -158,8 +158,8 @@ public class RegistrationSteps extends RegistrationPage {
     }
 
     public void selectGender(String gender){
-        Assert.assertTrue(getSelectCountryListLocator(gender).isDisplayed());
-        getSelectCountryListLocator(gender).click();
+        Assert.assertTrue(getSelectGenderListLocator(gender).isDisplayed());
+        getSelectGenderListLocator(gender).click();
     }
 
     public void clickSecretQuestion(){
