@@ -12,6 +12,7 @@ public class ChromeDriverManager extends DriverManager {
         options = new ChromeOptions();
         if(headless){
             options.addArguments("headless");
+            options.addArguments("window-size=1920,1080");
         }
         if(incognito){
             options.addArguments("--incognito");

@@ -31,7 +31,7 @@ public class Config {
 
     //Proyect params configuration
     private static String url = "https://demo.casino";
-    private static final Boolean headless = false;
+    public static final Boolean headless = true;
     private static final Boolean incognito = true;
     private static int waitSeconds = 7;
 
