@@ -1,27 +1,21 @@
 package Tests;
 
-import Steps.RegistrationSteps;
-import com.aventstack.extentreports.model.Log;
 import com.imagetyperzapi.ImageTyperzAPI;
 import com.vimalselvam.cucumber.listener.Reporter;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import org.junit.AfterClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
+import runner.CaptchaId;
 import runner.browser_manager.DriverManager;
 import runner.browser_manager.DriverManagerFactory;
 import runner.browser_manager.DriverType;
 
-import java.awt.*;
 import java.io.File;
-import java.io.IOException;
-import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
 public class Config {

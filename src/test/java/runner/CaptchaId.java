@@ -1,4 +1,4 @@
-package Tests;
+package runner;
 
 public abstract class CaptchaId {
 

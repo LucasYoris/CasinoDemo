@@ -28,5 +28,5 @@ Feature: User sign up
     Then a congratulations sign up message should be displayed
 
     Examples:
-      | email             | coin   | password   | name    | lastName   | middleName   |   birthay   | nickName   | address   | country   | city          | postalCode   | gender   | question                       | answer               |login   |
+      | email| coin   | password   | name    | lastName   | middleName   |   birthay   | nickName   | address   | country   | city          | postalCode   | gender   | question                       | answer               |login   |
       |"test"|  "USD" |"Test123"   |"Michael"|  "Jackson" | "Second"     | "1995-10-15"| "Jack"     |"False123" |"Argentina"|"Buenos Aires" |"1758"        |"Male"    |"Your favorite actor or actress"|   "question answer"  |"Test"  |

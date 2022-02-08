@@ -6,7 +6,7 @@ import com.vimalselvam.cucumber.listener.Reporter;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Assert;
+import runner.CaptchaId;
 
 
 public class RegisterTest extends CaptchaId {

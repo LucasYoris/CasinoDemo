@@ -10,7 +10,7 @@ import static cucumber.api.SnippetType.CAMELCASE;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         //where read cucumber features
-        features = "src/test/java/features",
+        features = {"src/test/java/features"},
         //where read test cases
         glue = ("Tests"),
         // export cucumber report
