@@ -31,7 +31,7 @@ public class Config {
 
     //Proyect params configuration
     private static String url = "https://demo.casino";
-    public static final Boolean headless = true;
+    public static final Boolean headless = false;
     private static final Boolean incognito = true;
     private static int waitSeconds = 7;
 
@@ -62,7 +62,7 @@ public class Config {
             Reporter.addScreenCaptureFromPath("errorsScreenshots\\"+screenshotName+".png");
             try{
                 //report captcha_id if the API couldn decrypt the image
-                if( (scenario.getName().contains("User sign up") || scenario.getName().contains("Send correct messagge")) && (driver.findElement(By.xpath("//div[text()='Invalid verification code' or text()='The verification code is incorrect.']")).isDisplayed()) ){
+                if(driver.findElement(By.xpath("//div[text()='Invalid verification code' or text()='The verification code is incorrect.']")).isDisplayed() && (scenario.getName().contains("User sign up") || scenario.getName().contains("Send correct messagge"))){
                     //Image Tyzer API
                     ImageTyperzAPI i = new ImageTyperzAPI("ED4592D467604D7C9B2891DEA6431902");
                     //Takes static captcha_id from RegistrationSteps
