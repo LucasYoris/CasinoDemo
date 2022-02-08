@@ -75,7 +75,7 @@ public class RegistrationSteps extends RegistrationPage {
         getTermsAndConditionsCheckBoxLocator().click();
     }
 
-    public void captchaInput() throws Exception {
+    public String captchaInput() throws Exception {
         //to focus captcha img
         getEnterCodeInputLocator().sendKeys("Enter code");
         getEnterCodeInputLocator().clear();
@@ -111,6 +111,7 @@ public class RegistrationSteps extends RegistrationPage {
             Reporter.addStepLog("Captcha used: "+captcha.get("Response")+"\n"+"Captcha ID: "+captcha_id);
             Thread.sleep(1000);
         }
+        return captcha_id;
     }
 
     public void birthdayDateInput(String date){
@@ -197,16 +198,14 @@ public class RegistrationSteps extends RegistrationPage {
         int max = 99999999;
 
         //Generate random int value from 10 to 99999999
-        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
-        return random_int;
+        return (int)Math.floor(Math.random()*(max-min+1)+min);
     }
 
     public static String randomString() {
         //Generate random String of 5 letters
         byte[] array = new byte[5];
         new Random().nextBytes(array);
-        String generatedString = new String(array, Charset.forName("UTF-8"));
-        return generatedString;
+        return new String(array, Charset.forName("UTF-8"));
     }
 
 

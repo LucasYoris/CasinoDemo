@@ -9,7 +9,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 
 
-public class RegisterTest {
+public class RegisterTest extends CaptchaId {
 
     protected CasinoHomeSteps casinoHomeSteps = new CasinoHomeSteps();
     protected RegistrationSteps registrationSteps = new RegistrationSteps();
@@ -73,7 +73,7 @@ public class RegisterTest {
 
     @When("^enters the registration catpcha code$")
     public void entersTheRegistrationCatpchaCode() throws Throwable {
-        registrationSteps.captchaInput();
+        captcha_id = registrationSteps.captchaInput();
     }
 
     @When("^enters their birthay \"([^\"]*)\"$")

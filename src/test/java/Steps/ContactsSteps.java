@@ -57,7 +57,7 @@ public class ContactsSteps extends ContactsPage {
     }
 
 
-    public void captchaInput() throws Exception {
+    public String captchaInput() throws Exception {
         //to focus captcha img
         getEnterCodeInputLocator().sendKeys("Enter code");
         getEnterCodeInputLocator().clear();
@@ -93,6 +93,7 @@ public class ContactsSteps extends ContactsPage {
             Reporter.addStepLog("Captcha used: "+captcha.get("Response")+"\n"+"Captcha ID: "+captcha_id);
             Thread.sleep(1000);
         }
+        return captcha_id;
     }
 
     public void clickSendButton(){

@@ -62,12 +62,13 @@ public class Config {
             Reporter.addScreenCaptureFromPath("errorsScreenshots\\"+screenshotName+".png");
             try{
                 //report captcha_id if the API couldn decrypt the image
-                if(driver.findElement(By.xpath("//div[text()='Invalid verification code' or text()='The verification code is incorrect.']")).isDisplayed() && (scenario.getName().contains("User sign up") || scenario.getName().contains("Send correct messagge"))){
+                if(driver.findElement(By.xpath("//div[text()='Invalid verification code' or text()='The verification code is incorrect.']")).isDisplayed() && (scenario.getName().contains("User sign up") || scenario.getName().equals("Send correct messagge from Contacts"))){
                     //Image Tyzer API
                     ImageTyperzAPI i = new ImageTyperzAPI("ED4592D467604D7C9B2891DEA6431902");
                     //Takes static captcha_id from RegistrationSteps
-                    i.set_captcha_bad(RegistrationSteps.captcha_id);
+                    i.set_captcha_bad(CaptchaId.captcha_id);
                     Reporter.addStepLog("The captcha could not be resolved by the API, please run the test again");
+                    System.out.println("The captcha could not be resolved by the API, please run the test again");
                 }
             }catch(Exception e){
                 //close driver

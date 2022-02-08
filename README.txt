@@ -45,6 +45,8 @@
 
 	STEPS >>> Package Steps - se utiliza la nomenclatura "páginaAProbar"+Steps.java
 
+	CaptchaId.java >>> clase abstacta para reportar en caso de que el desencriptado falle
+
 	Se utilizó el patron POM para la creación del proyecto combinado con cucumber
 	Se intentó utilizar la libreria Tesseract para resolver el captcha aunque...
 	El captcha se terminó resolviendo con la api de https://www.imagetyperz.com/

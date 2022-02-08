@@ -6,7 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class ContactsTests {
+public class ContactsTests extends CaptchaId {
 
     CasinoHomeSteps casinoHomeSteps = new CasinoHomeSteps();
     ContactsSteps contactsSteps = new ContactsSteps();
@@ -54,7 +54,7 @@ public class ContactsTests {
 
     @When("^enters the contact catpcha code$")
     public void entersTheContactCatpchaCode() throws Throwable {
-        contactsSteps.captchaInput();
+        captcha_id = contactsSteps.captchaInput();
     }
 
     @When("^click on Send button$")
