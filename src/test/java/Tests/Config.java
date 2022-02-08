@@ -33,7 +33,7 @@ public class Config {
     private static String url = "https://demo.casino";
     private static final Boolean headless = false;
     private static final Boolean incognito = true;
-    private static int waitSeconds = 9;
+    private static int waitSeconds = 7;
 
     @Before
     public void setUp(){

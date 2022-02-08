@@ -9,25 +9,22 @@ public class CasinoHomePage extends TestBase {
     private String titleHomePage = "Demo casino";
     private By registrationButtonLocator = By.xpath("//div[@class='header__bottom']//a[@href='/user/registration']");
     private By moreButtonLocator = By.xpath("//span[text()='More']");
-    private By contactsButtonLocator = By.xpath("//a[text()='Contacts' and @class='header-menu-main__item-link']");
+    private By contactsButtonLocator = By.xpath("//ul[@class='menu-dd__dropdown']/li/a[text()='Contacts']");
 
     public String getTitleHomePage() {
         return titleHomePage;
     }
 
     public WebElement getRegistrationButton() {
-        WebElement registrationButton = driver.findElement(registrationButtonLocator);
-        return registrationButton;
+        return driver.findElement(registrationButtonLocator);
     }
 
     public WebElement getMoreButton() {
-        WebElement moreButton = driver.findElement(moreButtonLocator);
-        return moreButton;
+        return driver.findElement(moreButtonLocator);
     }
 
     public WebElement getContactsButton() {
-        WebElement contactsButton = driver.findElement(contactsButtonLocator);
-        return contactsButton;
+        return driver.findElement(contactsButtonLocator);
     }
 
 }
